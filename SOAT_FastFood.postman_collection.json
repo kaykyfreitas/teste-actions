@@ -1,0 +1,1183 @@
+{
+	"info": {
+		"_postman_id": "c1053818-1b2c-49d4-83d3-5638026a3c86",
+		"name": "SOAT_FastFood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20774480"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huLmRvZUBlbWFpbC5jb20iLCJyb2xlcyI6WyJBRE1JTiJdLCJpYXQiOjE3NTQxMDQyMTIsImV4cCI6MTc1NDE0NzQxMn0.gk8CGcm9APHuVMq5yoK_ZZ7joHHQ3ue2yRCnoxy9ckU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nome do Produto\",\n    \"description\": \"Descrição do Produto\",\n    \"value\": 10.00,\n    \"image_url\": \"https://exemplo.com/foto-produto.jpg\",\n    \"product_category_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Product - Lanche",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Hambúrguer Clássico\",\n    \"description\": \"Hambúrguer bovino com queijo, alface e tomate\",\n    \"value\": 15.00,\n    \"image_url\": \"https://exemplo.com/images/hamburguer.jpg\",\n    \"product_category_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/products",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Create Product - Acompanhamento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Batata Frita\",\n    \"description\": \"Porção de batata frita crocante\",\n    \"value\": 8.00,\n    \"image_url\": \"https://exemplo.com/images/batatafrita.jpg\",\n    \"product_category_id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/products",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Create Product - Bebida",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Refrigerante Lata\",\n    \"description\": \"Refrigerante gelado de 350ml\",\n    \"value\": 5.00,\n    \"image_url\": \"https://exemplo.com/images/refrigerante.jpg\",\n    \"product_category_id\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/products",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Create Product - Sobremesa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Sorvete Casquinha\",\n    \"description\": \"Casquinha de sorvete com cobertura de chocolate\",\n    \"value\": 12.00,\n    \"image_url\": \"https://exemplo.com/images/sorvete.jpg\",\n    \"product_category_id\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/products",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huLmRvZUBlbWFpbC5jb20iLCJyb2xlcyI6WyJBRE1JTiJdLCJpYXQiOjE3NTQxMDQyMTIsImV4cCI6MTc1NDE0NzQxMn0.gk8CGcm9APHuVMq5yoK_ZZ7joHHQ3ue2yRCnoxy9ckU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nome do Produto Atualizado\",\n    \"description\": \"Descrição do Produto Atualizado\",\n    \"value\": 15.00,\n    \"image_url\": \"https://exemplo.com/foto-produto-atualizado.jpg\",\n    \"product_category_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/:productId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1",
+									"description": "Identificador do produto a ser atualizado."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Product - Lanche",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Hambúrguer Clássico Atualizado\",\n    \"description\": \"Hambúrguer bovino com queijo, alface e tomate atualizado\",\n    \"value\": 20.00,\n    \"image_url\": \"https://exemplo.com/images/hamburguer-atualizado.jpg\",\n    \"product_category_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/:productId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "1",
+											"description": "Identificador do produto a ser atualizado."
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Update Product - Acompanhamento",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Batata Frita Atualizada\",\n    \"description\": \"Porção de batata frita crocante atualizada\",\n    \"value\": 10.00,\n    \"image_url\": \"https://exemplo.com/images/batatafrita-atualizada.jpg\",\n    \"product_category_id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/:productId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "1",
+											"description": "Identificador do produto a ser atualizado."
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Update Product - Bebida",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Refrigerante Lata Atualizado\",\n    \"description\": \"Refrigerante gelado de 350ml atualizado\",\n    \"value\": 10.00,\n    \"image_url\": \"https://exemplo.com/images/refrigerante-atualizado.jpg\",\n    \"product_category_id\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/:productId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "1",
+											"description": "Identificador do produto a ser atualizado."
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Update Product - Sobremesa",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Sorvete Casquinha Atualizada\",\n    \"description\": \"Casquinha de sorvete com cobertura de chocolate atualizada\",\n    \"value\": 15.00,\n    \"image_url\": \"https://exemplo.com/images/sorvete-atualizado.jpg\",\n    \"product_category_id\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/:productId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "1",
+											"description": "Identificador do produto a ser atualizado."
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get Product By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/:productId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1",
+									"description": "Identificador do produto a ser consultado."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huLmRvZUBlbWFpbC5jb20iLCJyb2xlcyI6WyJBRE1JTiJdLCJpYXQiOjE3NTQxMDQyMTIsImV4cCI6MTc1NDE0NzQxMn0.gk8CGcm9APHuVMq5yoK_ZZ7joHHQ3ue2yRCnoxy9ckU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/products/:productId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1",
+									"description": "Identificador do produto a ser deletado."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Products By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/products/category/:categoryId?page=0&per_page=10&sort=name&dir=asc&search=Cheese",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"category",
+								":categoryId"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"description": "Pagina da consulta desejada. (Default: 0)"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Numero de itens desejados por pagina. (Default: 10)"
+								},
+								{
+									"key": "sort",
+									"value": "name",
+									"description": "Atributo a ser utilizada para a ordenacao. (Default: name)"
+								},
+								{
+									"key": "dir",
+									"value": "asc",
+									"description": "Direcao a ser utilizada para a ordenacao. (Default: asc)"
+								},
+								{
+									"key": "search",
+									"value": "Cheese",
+									"description": "Trecho do nome ou descricao dos produtos desejados. (Default: \"\")"
+								}
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "1",
+									"description": "Identificador da cotegoria dos produtos desejados"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# 📦 Product API\n\nAPI responsável por gerenciar produtos do sistema (CRUD + listagem por categoria com paginação).\n\n> **Base URL:** `/products`  \n**Autenticação:** `Bearer Token` requerida em operações de escrita. \n  \n\n---\n\n## 🔐 Autenticação\n\nAlgumas rotas requerem autenticação via `bearerAuth`.\n\n---\n\n## ➕ Criar Produto\n\n**POST** `/products`\n\nCria um novo produto.\n\n### 🔸 Responses\n\n- `201 Created`: Produto criado\n- `422 Unprocessable Entity`: Erro de validação\n- `500 Internal Server Error`\n    \n\n---\n\n## 🔍 Buscar Produto por ID\n\n**GET** `/products/{id}`\n\nRetorna um produto pelo seu ID.\n\n### 🔸 Responses\n\n- `200 OK`: Produto encontrado\n- `404 Not Found`: Produto não existe\n- `500 Internal Server Error`\n    \n\n---\n\n## ✏️ Atualizar Produto\n\n**PUT** `/products/{id}`\n\nAtualiza os dados de um produto.\n\n### 🔸 Responses\n\n- `200 OK`: Produto atualizado\n- `404 Not Found`: Produto não existe\n- `422 Unprocessable Entity`: Erro de validação\n- `500 Internal Server Error`\n    \n\n---\n\n## ❌ Deletar Produto\n\n**DELETE** `/products/{id}`\n\nRemove um produto por ID.\n\n### 🔸 Responses\n\n- `204 No Content`: Produto deletado\n- `404 Not Found`: Produto não existe\n- `500 Internal Server Error`\n    \n\n---\n\n## 📂 Listar Produtos por Categoria\n\n**GET** `/products/category/{categoryId}`\n\nRetorna os produtos de uma categoria com paginação e filtros.\n\n### 🔸 Query Params\n\n| Parâmetro | Descrição | Default |\n| --- | --- | --- |\n| `page` | Número da página | `0` |\n| `per_page` | Itens por página | `10` |\n| `sort` | Campo de ordenação | `name` |\n| `dir` | Direção (`asc` ou `desc`) | `asc` |\n| `search` | Texto de busca | `\"\"` |\n\n### 🔸 Responses\n\n- `200 OK`: Lista de produtos\n- `500 Internal Server Error`\n    \n\n---"
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Create Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nome do cliente\",\n    \"email\": \"nome.cliente@email.com\",\n    \"cpf\": \"12345678900\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Client",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@email.com\",\n    \"cpf\": \"12345678900\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/clients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"clients"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Identify Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": \"12345678900\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clients/identify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clients",
+								"identify"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# 👤 Client API\n\nAPI responsável pela criação e identificação de clientes via CPF.\n\n> **Base URL:** `/clients`  \n**Autenticação:** Não requerida \n  \n\n---\n\n## 🔍 Identificar Cliente por CPF\n\n**POST** `/clients/identify`\n\nIdentifica um cliente a partir do CPF informado.\n\n### 🔸 Body (JSON)\n\n``` json\n{\n  \"cpf\": \"12345678900\"\n}\n\n ```\n\n### 🔸 Responses\n\n- `200 OK`: Cliente encontrado\n    \n- `404 Not Found`: Cliente não encontrado\n    \n- `422 Unprocessable Entity`: CPF inválido\n    \n- `500 Internal Server Error`\n    \n\n---\n\n## ➕ Criar Cliente\n\n**POST** `/clients`\n\nCria um novo cliente no sistema.\n\n### 🔸 Body (JSON)\n\n``` json\n{\n  \"name\": \"João da Silva\",\n  \"cpf\": \"12345678900\"\n}\n\n ```\n\n### 🔸 Responses\n\n- `201 Created`: Cliente criado com sucesso\n    \n- `422 Unprocessable Entity`: Dados inválidos\n    \n- `500 Internal Server Error`\n    \n\n---"
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"client_public_id\": \"67020536-c27d-44c2-b0a0-66170fc69233\",\r\n  \"products\": [\r\n    {\r\n      \"product_id\": 7,\r\n      \"quantity\": 5\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Order With Client",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"client_public_id\": \"360de4d4-6dc7-48ed-82b1-d2024bfa1a16\",\r\n  \"products\": [\r\n    {\r\n      \"product_id\": 7,\r\n      \"quantity\": 5\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Create Order Without Client",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"client_public_id\": null,\r\n  \"products\": [\r\n    {\r\n      \"product_id\": 7,\r\n      \"quantity\": 5\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Update Order Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huLmRvZUBlbWFpbC5jb20iLCJyb2xlcyI6WyJBRE1JTiJdLCJpYXQiOjE3NTQxMDQyMTIsImV4cCI6MTc1NDE0NzQxMn0.gk8CGcm9APHuVMq5yoK_ZZ7joHHQ3ue2yRCnoxy9ckU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"Satus do pedido\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/:orderId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "67020536-c27d-44c2-b0a0-66170fc69233",
+									"description": "Identificador do pedido a ser atualizado."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Order Status - RECEIVED",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"RECEIVED\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/orders/:orderId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"orders",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "3e3667b3-d548-4c71-b307-e776ed4a5bd1",
+											"description": "Identificador do pedido a ser atualizado."
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Update Order Status - IN_PREPARATION",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"IN_PREPARATION\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/orders/:orderId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"orders",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "3e3667b3-d548-4c71-b307-e776ed4a5bd1",
+											"description": "Identificador do pedido a ser atualizado."
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Update Order Status - READY",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"READY\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/orders/:orderId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"orders",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "3e3667b3-d548-4c71-b307-e776ed4a5bd1",
+											"description": "Identificador do pedido a ser atualizado."
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Update Order Status - COMPLETED",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"Satus do pedido\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/orders/:orderId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"orders",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "3e3667b3-d548-4c71-b307-e776ed4a5bd1",
+											"description": "Identificador do pedido a ser atualizado."
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "List Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/orders?only_paid=false&page=0&per_page=10&sort=orderNumber&dir=asc&search=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "only_paid",
+									"value": "false",
+									"description": "Defini se serão listados apenas os pedidos pagos, podendo ser true or false. (Default: false)"
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"description": "Pagina da consulta desejada. (Default: 0)"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Numero de itens desejados por pagina. (Default: 10)"
+								},
+								{
+									"key": "sort",
+									"value": "orderNumber",
+									"description": "Atributo a ser utilizada para a ordenacao. (Default: orderNumber)"
+								},
+								{
+									"key": "dir",
+									"value": "asc",
+									"description": "Direcao a ser utilizada para a ordenacao. (Default: asc)"
+								},
+								{
+									"key": "search",
+									"value": "",
+									"description": "Trecho do numero da ordem, nome do produto ou identifcador publico dos produtos desejados. (Default: \"\")"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Orders For Staff",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/orders/staff?only_paid=false&page=0&per_page=10&sort=orderNumber&dir=asc&search=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"staff"
+							],
+							"query": [
+								{
+									"key": "only_paid",
+									"value": "false",
+									"description": "Defini se serão listados apenas os pedidos pagos, podendo ser true or false. (Default: false)"
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"description": "Pagina da consulta desejada. (Default: 0)"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Numero de itens desejados por pagina. (Default: 10)"
+								},
+								{
+									"key": "sort",
+									"value": "orderNumber",
+									"description": "Atributo a ser utilizada para a ordenacao. (Default: orderNumber)"
+								},
+								{
+									"key": "dir",
+									"value": "asc",
+									"description": "Direcao a ser utilizada para a ordenacao. (Default: asc)"
+								},
+								{
+									"key": "search",
+									"value": "",
+									"description": "Trecho do numero da ordem, nome do produto ou identifcador publico dos produtos desejados. (Default: \"\")"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# 🧾 Order API\n\nAPI responsável pela criação, atualização de status e listagem de pedidos no sistema.\n\n**Base URL:** `/orders`  \n**Autenticação:** Requer Bearer Token apenas para atualização de status.\n\n---\n\n## ➕ Criar Pedido\n\n**POST** `/orders`  \nCria um novo pedido com base nos dados enviados.\n\n### 🔸 Body (JSON)\n\n``` json\n{\n  \"clientId\": \"uuid-do-cliente\",\n  \"items\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 2\n    },\n    {\n      \"productId\": 2,\n      \"quantity\": 1\n    }\n  ],\n  \"paymentMethod\": \"CREDIT_CARD\"\n}\n\n ```\n\n### 🔸 Responses\n\n- `200 OK`: Pedido criado com sucesso\n    \n- `404 Not Found`: Cliente ou produto não encontrado\n    \n- `422 Unprocessable Entity`: Erro de validação\n    \n- `500 Internal Server Error`: Erro interno do servidor\n    \n\n---\n\n## 🔄 Atualizar Status do Pedido\n\n**PUT** `/orders/{publicId}`  \nAtualiza o status de um pedido existente.\n\n🔐 **Requer autenticação via Bearer Token**\n\n### 🔸 Body (JSON)\n\n``` json\n{\n  \"status\": \"PAID\"\n}\n\n ```\n\n### 🔸 Responses\n\n- `200 OK`: Status atualizado com sucesso\n    \n- `404 Not Found`: Pedido não encontrado\n    \n- `422 Unprocessable Entity`: Erro de validação\n    \n- `500 Internal Server Error`: Erro interno do servidor\n    \n\n---\n\n## 📃 Listar Pedidos (Clientes)\n\n**GET** `/orders`  \nLista pedidos realizados pelo cliente autenticado. Retorna resultados paginados.\n\n### 🔸 Query Params\n\n| Parâmetro | Descrição | Padrão |\n| --- | --- | --- |\n| `page` | Número da página | `0` |\n| `per_page` | Itens por página | `10` |\n\n### 🔸 Responses\n\n- `200 OK`: Lista de pedidos retornada\n    \n- `500 Internal Server Error`\n    \n\n---\n\n## 📋 Listar Pedidos (Staff)\n\n**GET** `/orders/staff`  \nLista todos os pedidos do sistema com filtros e paginação. Endpoint voltado para operadores internos.\n\n### 🔸 Query Params\n\n| Parâmetro | Descrição | Padrão |\n| --- | --- | --- |\n| `only_paid` | Filtra apenas pedidos pagos | `false` |\n| `search` | Filtro por número do pedido ou cliente | `\"\"` |\n| `page` | Número da página | `0` |\n| `per_page` | Itens por página | `10` |\n| `sort` | Campo de ordenação | `orderNumber` |\n| `dir` | Direção da ordenação (`asc` ou `desc`) | `asc` |\n\n### 🔸 Responses\n\n- `200 OK`: Lista de pedidos retornada com sucesso\n    \n- `500 Internal Server Error`\n    \n\n---"
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Get QRCode by externalReference",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/payments/qrcode?external_reference=d7ebf6a9-01db-47bb-b58c-bf873e46a0b4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payments",
+								"qrcode"
+							],
+							"query": [
+								{
+									"key": "external_reference",
+									"value": "d7ebf6a9-01db-47bb-b58c-bf873e46a0b4",
+									"description": "Identificador externo referente ao pagamento."
+								}
+							]
+						},
+						"description": "This endpoint retrieves the details of a specific payment with the ID \"5b7beea0-a8ac-4a31-87ff-8d17aa5ea5c3\".\n\n### Request\n\nNo request body is required for this endpoint. The request is sent via an HTTP GET method to the specified URL.\n\n### Response\n\nThe response will be a JSON object with the following schema:\n\n``` json\n{\n  \"id\": \"string\",\n  \"amount\": \"number\",\n  \"currency\": \"string\",\n  \"status\": \"string\",\n  \"timestamp\": \"string\"\n}\n\n ```\n\n- `id`: The unique identifier of the payment.\n    \n- `amount`: The amount of the payment.\n    \n- `currency`: The currency in which the payment was made.\n    \n- `status`: The status of the payment.\n    \n- `timestamp`: The timestamp when the payment was made."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/payments/status?external_reference=a93021f8-a72c-4fcd-b1aa-ec4ee377a95e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payments",
+								"status"
+							],
+							"query": [
+								{
+									"key": "external_reference",
+									"value": "a93021f8-a72c-4fcd-b1aa-ec4ee377a95e",
+									"description": "Identificador externo referente ao pagamento."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "## 📦 Payments API\n\n### 🔗 Base URL\n\n`/payments`\n\n---\n\n### 📥 `GET /payments/qrcode`\n\n**Resumo:** Retorna o QR Code do pagamento com base na referência externa.\n\n**Parâmetros de Consulta:**\n\n| Nome | Tipo | Obrigatório | Descrição |\n| --- | --- | --- | --- |\n| `external_reference` | string | Sim | Referência externa do pagamento |\n\n**Respostas:**\n\n| Código | Descrição | Conteúdo |\n| --- | --- | --- |\n| 200 | QR Code retornado com sucesso | `byte[]` (`application/json`) |\n| 404 | Pagamento não encontrado | `DefaultApiError` (JSON) |\n| 500 | Erro interno no servidor | `DefaultApiError` (JSON) |\n\n---\n\n### 📥 `GET /payments/status`\n\n**Resumo:** Retorna o status do pagamento com base na referência externa.\n\n**Parâmetros de Consulta:**\n\n| Nome | Tipo | Obrigatório | Descrição |\n| --- | --- | --- | --- |\n| `external_reference` | string | Sim | Referência externa do pagamento |\n\n**Respostas:**\n\n| Código | Descrição | Conteúdo |\n| --- | --- | --- |\n| 200 | Status do pagamento retornado com sucesso | `GetPaymentStatusByExternalReferenceResponse` (JSON) |\n| 404 | Pagamento não encontrado | `DefaultApiError` (JSON) |\n| 500 | Erro interno no servidor | `DefaultApiError` (JSON) |\n\n---"
+		},
+		{
+			"name": "Payment Webhook",
+			"item": [
+				{
+					"name": "Payment Webhook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"56a21d4a-fc57-4636-a5c6-0e5e087ea32b\",\n    \"topic\": \"payment.created\",\n    \"resource\": \"http://mock-url.com/payment/56a21d4a-fc57-4636-a5c6-0e5e087ea32b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/webhooks/mercadopago",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"webhooks",
+								"mercadopago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Webhook Mock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"56a21d4a-fc57-4636-a5c6-0e5e087ea32b\",\n    \"topic\": \"payment.created\",\n    \"resource\": \"http://mock-url.com/payment/56a21d4a-fc57-4636-a5c6-0e5e087ea32b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/mock/simulate-mercadopago-webhook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mock",
+								"simulate-mercadopago-webhook"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# 📬 Webhook de Pagamento - Mercado Pago\n\nAPI responsável por receber notificações de atualização de status de pagamento enviadas pelo Mercado Pago.\n\n**Base URL:** `/webhooks/mercadopago`  \n**Autenticação:** Não requer autenticação — uso exclusivo do Mercado Pago.\n\n---\n\n## 📥 Receber Notificação de Pagamento\n\n**POST** `/webhooks/mercadopago`  \nEndpoint chamado pelo Mercado Pago para envio de atualizações de status de pagamento.\n\n### 🔸 Body (JSON)\n\n``` json\n{\n  \"id\": \"1234567890\",\n  \"topic\": \"payment.created\",\n  \"resource\": \"https://api.mercadopago.com/v1/payments/1234567890\"\n}\n\n ```\n\n### 🔸 Campos\n\n| Campo | Tipo | Obrigatório | Descrição |\n| --- | --- | --- | --- |\n| `id` | string | Sim | Identificador externo do pagamento (`external_reference`) |\n| `topic` | string | Sim | Tipo de evento (ex: `payment.update`, `payment.created`, `payment.rejected`) |\n| `resource` | string | Sim | URL do recurso relacionado ao pagamento |\n\n### 🔸 Responses\n\n- `200 OK`: Notificação processada com sucesso\n    \n- `400 Bad Request`: Corpo da requisição inválido\n    \n- `404 Not Found`: Pagamento não encontrado\n    \n- `500 Internal Server Error`: Erro interno do servidor"
+		},
+		{
+			"name": "Staffs",
+			"item": [
+				{
+					"name": "Auth Staff",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\": \"john.doe@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auths",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auths"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# 🔐 Auth Staff API\n\nAPI responsável por autenticar funcionários e gerar token de autenticação.\n\n> **Base URL:** `/auths`  \n**Autenticação:** Não requerida para esta rota. \n  \n\n---\n\n## 🧑‍💼 Autenticar Funcionário\n\n**POST** `/auths`\n\nAutentica um funcionário com base nas credenciais fornecidas e retorna um token JWT.\n\n- `200 OK`: Token de autenticação retornado com sucesso\n    \n- `404 Not Found`: Funcionário não encontrado\n    \n- `422 Unprocessable Entity`: Erro de validação (ex: campos vazios)\n    \n- `500 Internal Server Error`\n    \n\n---"
+		}
+	]
+}
