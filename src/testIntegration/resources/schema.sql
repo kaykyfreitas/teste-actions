@@ -125,29 +125,29 @@ ALTER TABLE "staff_roles"
 
 
 CREATE OR REPLACE FUNCTION update_timestamp()
-   RETURNS TRIGGER AS $$
+    RETURNS TRIGGER AS $$
 BEGIN
-   NEW.updated_at = CURRENT_TIMESTAMP;
-RETURN NEW;
+    NEW.updated_at = CURRENT_TIMESTAMP;
+    RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
 
 DO $$
-DECLARE
-tbl_name text;
-BEGIN
-FOR tbl_name IN
-SELECT table_name FROM information_schema.columns WHERE column_name = 'updated_at'
-    LOOP
-      EXECUTE format(
-         'CREATE TRIGGER set_updated_at_%I
-          BEFORE UPDATE ON %I
-          FOR EACH ROW
-          EXECUTE FUNCTION update_timestamp();',
-         tbl_name,
-         tbl_name
-      );
-END LOOP;
-END;
+    DECLARE
+        tbl_name text;
+    BEGIN
+        FOR tbl_name IN
+            SELECT table_name FROM information_schema.columns WHERE column_name = 'updated_at'
+            LOOP
+                EXECUTE format(
+                        'CREATE TRIGGER set_updated_at_%I
+                         BEFORE UPDATE ON %I
+                         FOR EACH ROW
+                         EXECUTE FUNCTION update_timestamp();',
+                        tbl_name,
+                        tbl_name
+                        );
+            END LOOP;
+    END;
 $$;
