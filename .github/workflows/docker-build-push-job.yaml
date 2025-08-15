@@ -10,7 +10,7 @@ on:
         required: true
         type: string
     secrets:
-      DOCKERHUB_USERNAME:
+      DOCKERHUB_LOGIN:
         required: true
       DOCKERHUB_TOKEN:
         required: true
