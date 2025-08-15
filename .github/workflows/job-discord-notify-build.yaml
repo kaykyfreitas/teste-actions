@@ -1,35 +1,21 @@
-name: Main Workflow
+name: Notify Discord Build Status
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_call:
+    inputs:
+      build_status:
+        required: true
+        type: string
 
 jobs:
-  run-tests:
-    uses: ./.github/workflows/unit-test-job.yaml
-
-  build-and-push-docker:
-    needs: run-tests
-    uses: ./.github/workflows/docker-build-push-job.yaml
-    with:
-      image_name: soatproject/fastfood-soat-app-totem
-      image_tag: latest
-    secrets:
-      DOCKERHUB_LOGIN: ${{ secrets.DOCKERHUB_LOGIN }}
-      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  notify-discord-build-status:
-    needs: build-and-push-docker
+  notify-discord:
     runs-on: ubuntu-latest
-    if: ${{ always() }}
     steps:
       - name: Send Build Status to Discord
         env:
-          BUILD_STATUS: ${{ needs.build-and-push-docker.result }}
           REPO_NAME: ${{ github.event.repository.name }}
           WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          BUILD_STATUS: ${{ inputs.build_status }}
         run: |
           if [ "$BUILD_STATUS" == "success" ]; then
             MESSAGE="✅ Docker build and push for '$REPO_NAME' succeeded on the 'main' branch! [View Workflow]($WORKFLOW_URL)"
@@ -44,4 +30,4 @@ jobs:
           
           curl -H "Content-Type: application/json" \
           -d "{\"embeds\":[{\"description\":\"$MESSAGE\",\"color\":$COLOR}]}" \
-          "${{ secrets.DISCORD_WEBHOOK }}"
+          "${{ secrets.DISCORD_BUILD_WEBHOOK }}"
