@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  notificar_discord_pr:
+  notify-discord-pull-request:
     runs-on: ubuntu-latest
     steps:
       - name: Notify Discord
@@ -19,10 +19,9 @@ jobs:
           PR_AUTHOR="${{ github.event.pull_request.user.login }}"
           
           # Formate a mensagem com informações do PR
-          
           MESSAGE="New Pull Request #${PR_NUMBER} opened by ${PR_AUTHOR}:\n> **${PR_TITLE}**\n\n[View Pull Request](${PR_URL})"
 
           # Envie a mensagem para o Discord usando curl
           curl -H "Content-Type: application/json" \
-          -d "{\"content\": \"$MENSAGEM\"}" \
+          -d "{\"content\": \"$MESSAGE\"}" \
           "${{ secrets.DISCORD_WEBHOOK }}"
