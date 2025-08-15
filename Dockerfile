@@ -25,8 +25,15 @@ EXPOSE ${APPLICATION_PORT}
 ENV JAVA_OPTS="-XX:+UseContainerSupport \
                -XX:MaxRAMPercentage=75.0 \
                -XX:+ExitOnOutOfMemoryError \
-               -XX:+AlwaysActAsServerClassMachine \
                -XX:+UseG1GC \
-               -Dfile.encoding=UTF-8"
+               -XX:+UseStringDeduplication \
+               -XX:+OptimizeStringConcat \
+               -XX:TieredStopAtLevel=1 \
+               -XX:+TieredCompilation \
+               -Xverify:none \
+               -XX:+UseCompressedOops \
+               -XX:+UseCompressedClassPointers \
+               -Dfile.encoding=UTF-8 \
+               -Djava.security.egd=file:/dev/./urandom"
 
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]

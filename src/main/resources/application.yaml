@@ -17,6 +17,9 @@ server:
 spring:
   main:
     banner-mode: off
+    lazy-initialization: true
+    register-shutdown-hook: false
+    cloud-platform: none
   application:
     name: fast-food-soat
 
@@ -29,9 +32,13 @@ spring:
       auto-commit: false
       connection-timeout: 250
       max-lifetime: 600000
-      maximum-pool-size: 20
-      minimum-idle: 10
+      maximum-pool-size: 10
+      minimum-idle: 2
       pool-name: master
+      initialization-fail-timeout: -1
+      data-source-properties:
+        prepareThreshold: 0
+        preparedStatementCacheQueries: 0
 
   jpa:
     hibernate:
@@ -43,11 +50,17 @@ spring:
         connection:
           autocommit: false
         generate_statistics: false
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 25
+          fetch_size: 100
     open-in-view: false
+    defer-datasource-initialization: true
 
   jackson:
     serialization:
-      indent_output: true
+      indent_output: false
 
 management:
   endpoints:

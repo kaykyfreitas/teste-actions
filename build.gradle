@@ -45,22 +45,35 @@ tasks.withType(Copy).configureEach {
 apply from: 'gradle/test-integration.gradle'
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation ('org.springframework.boot:spring-boot-starter-data-jpa') {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-aop'
+		exclude group: 'org.hibernate.orm', module: 'hibernate-jcache'
+	}
 
 	implementation ('org.springframework.boot:spring-boot-starter-web') {
 		exclude module: 'spring-boot-starter-tomcat'
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-json'
+		exclude group: 'org.apache.tomcat.embed', module: 'tomcat-embed-el'
 	}
 	implementation 'org.springframework.boot:spring-boot-starter-undertow'
 
-	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation ('org.springframework.boot:spring-boot-starter-security') {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-aop'
+	}
+
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6'
 	runtimeOnly 'org.postgresql:postgresql'
 
 	// Spring WebFlux
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation ('org.springframework.boot:spring-boot-starter-webflux') {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-reactor-netty'
+	}
 
 	// Spring actuator
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation ('org.springframework.boot:spring-boot-starter-actuator') {
+		exclude group: 'io.micrometer', module: 'micrometer-observation'
+		exclude group: 'io.micrometer', module: 'micrometer-commons'
+	}
 
 	// ZXing
 	implementation 'com.google.zxing:core:3.5.1'
@@ -72,7 +85,9 @@ dependencies {
 	runtimeOnly('io.jsonwebtoken:jjwt-jackson:0.12.5')
 
 	// Spring Jakarta Validation
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation ('org.springframework.boot:spring-boot-starter-validation') {
+		exclude group: 'org.apache.tomcat.embed', module: 'tomcat-embed-el'
+	}
 
 	testImplementation 'org.springframework.security:spring-security-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
