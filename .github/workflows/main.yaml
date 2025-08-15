@@ -37,13 +37,13 @@ jobs:
           COLOR=0
           
           if [ "$BUILD_STATUS" == "success" ]; then
-            MESSAGE="✅ Docker build and push succeeded on the `main` branch! [View Workflow](${WORKFLOW_URL})"
+            MESSAGE="✅ Docker build and push succeeded on the 'main' branch! [View Workflow](${WORKFLOW_URL})"
             COLOR=3066993
           elif [ "$BUILD_STATUS" == "failure" ]; then
-            MESSAGE="❌ Docker build and push failed on the `main` branch! [View Workflow](${WORKFLOW_URL})"
+            MESSAGE="❌ Docker build and push failed on the 'main' branch! [View Workflow](${WORKFLOW_URL})"
             COLOR=15158332
           else
-            MESSAGE="⚠️ Docker build and push status: ${BUILD_STATUS} on the `main` branch. [View Workflow](${WORKFLOW_URL})"
+            MESSAGE="⚠️ Docker build and push status: ${BUILD_STATUS} on the 'main' branch. [View Workflow](${WORKFLOW_URL})"
             COLOR=16776960
           fi
           
