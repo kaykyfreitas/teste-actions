@@ -12,8 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import soat.project.fastfoodsoat.infrastructure.auth.model.request.AuthStaffRequest;
-import soat.project.fastfoodsoat.infrastructure.auth.model.response.AuthStaffResponse;
+import soat.project.fastfoodsoat.infrastructure.staff.model.request.AuthStaffRequest;
+import soat.project.fastfoodsoat.infrastructure.staff.model.response.AuthStaffResponse;
 import soat.project.fastfoodsoat.infrastructure.web.model.DefaultApiError;
 
 @Tag(name = "Auths")

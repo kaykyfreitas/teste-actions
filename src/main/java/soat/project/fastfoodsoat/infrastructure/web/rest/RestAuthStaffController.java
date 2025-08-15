@@ -2,10 +2,10 @@ package soat.project.fastfoodsoat.infrastructure.web.rest;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
-import soat.project.fastfoodsoat.infrastructure.auth.controller.AuthStaffController;
+import soat.project.fastfoodsoat.infrastructure.staff.controller.AuthStaffController;
 import soat.project.fastfoodsoat.infrastructure.web.rest.api.AuthStaffAPI;
-import soat.project.fastfoodsoat.infrastructure.auth.model.request.AuthStaffRequest;
-import soat.project.fastfoodsoat.infrastructure.auth.model.response.AuthStaffResponse;
+import soat.project.fastfoodsoat.infrastructure.staff.model.request.AuthStaffRequest;
+import soat.project.fastfoodsoat.infrastructure.staff.model.response.AuthStaffResponse;
 
 @RestController
 public class RestAuthStaffController implements AuthStaffAPI {

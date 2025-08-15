@@ -1,11 +1,11 @@
-package soat.project.fastfoodsoat.infrastructure.auth.controller;
+package soat.project.fastfoodsoat.infrastructure.staff.controller;
 
 import org.springframework.stereotype.Component;
 import soat.project.fastfoodsoat.application.command.staff.auth.AuthStaffCommand;
 import soat.project.fastfoodsoat.application.usecase.staff.auth.AuthStaffUseCase;
-import soat.project.fastfoodsoat.infrastructure.auth.model.request.AuthStaffRequest;
-import soat.project.fastfoodsoat.infrastructure.auth.model.response.AuthStaffResponse;
-import soat.project.fastfoodsoat.infrastructure.auth.presenter.AuthStaffPresenter;
+import soat.project.fastfoodsoat.infrastructure.staff.model.request.AuthStaffRequest;
+import soat.project.fastfoodsoat.infrastructure.staff.model.response.AuthStaffResponse;
+import soat.project.fastfoodsoat.infrastructure.staff.presenter.AuthStaffPresenter;
 
 @Component
 public class AuthStaffControllerImpl implements AuthStaffController {
