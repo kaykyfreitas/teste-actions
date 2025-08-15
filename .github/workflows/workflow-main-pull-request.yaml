@@ -8,11 +8,15 @@ on:
 
 jobs:
 
-  test:
+  test-unit:
     uses: ./.github/workflows/job-unit-test.yaml@main
 
+  test-integration:
+    needs: test-unit
+    uses: ./.github/workflows/job-integration-test.yaml@main
+
   notify:
-    needs: test
+    if: ${{ always() }}
     uses: ./.github/workflows/job-discord-notify-pull-request.yaml@main
     with:
       pr_title: ${{ github.event.pull_request.title }}
