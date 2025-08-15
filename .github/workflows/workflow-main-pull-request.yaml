@@ -1,4 +1,4 @@
-name: Notify Pull Requests on Discord
+name: Pull Request Workflow
 
 on:
   pull_request:
@@ -8,5 +8,15 @@ on:
 
 jobs:
 
-  test:
-    uses: ./.github/workflows/job-test.yaml
+  unit-tests:
+    name: Run Unit Tests
+    uses: ./.github/workflows/job-gradle-test.yaml
+    with:
+      test_command: ./gradlew test --no-daemon
+
+  integration-tests:
+    name: Run Integration Tests
+    needs: unit-tests
+    uses: ./.github/workflows/job-gradle-test.yaml
+    with:
+      test_command: ./gradlew testIntegration --no-daemon
