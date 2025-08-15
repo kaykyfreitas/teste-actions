@@ -9,8 +9,8 @@ on:
 jobs:
 
   test-unit:
-    uses: ./.github/workflows/job-unit-test.yaml@main
+    uses: ./.github/workflows/job-unit-test.yaml
 
   test-integration:
     needs: test-unit
-    uses: ./.github/workflows/job-integration-test.yaml@main
+    uses: ./.github/workflows/job-integration-test.yaml

@@ -7,11 +7,11 @@ on:
 jobs:
 
   test:
-    uses: ./.github/workflows/job-unit-test.yaml@main
+    uses: ./.github/workflows/job-unit-test.yaml
 
   docker:
     needs: test
-    uses: ./.github/workflows/job-docker-build-push.yaml@main
+    uses: ./.github/workflows/job-docker-build-push.yaml
     with:
       image_name: soatproject/fastfood-soat-app-totem
       image_tag: latest
@@ -22,7 +22,7 @@ jobs:
   notify:
     needs: docker
     if: ${{ always() }}
-    uses: ./.github/workflows/job-discord-notify-build.yaml@main
+    uses: ./.github/workflows/job-discord-notify-build.yaml
     with:
       build_status: ${{ needs.docker.result }}
     secrets:
