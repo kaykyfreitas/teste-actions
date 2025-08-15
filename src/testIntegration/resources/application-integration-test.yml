@@ -1,4 +1,6 @@
 spring:
+  main:
+    lazy-initialization: false
   datasource:
     url: jdbc:tc:postgresql:16-alpine:///testdb
     username: test

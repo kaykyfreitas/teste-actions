@@ -1,17 +1,17 @@
-name: Test Job
+name: Unit Tests Job
 
 on:
   workflow_call:
 
 jobs:
-  test:
+  unit-tests:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Configurar Java
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -27,8 +27,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Dar permissão ao Gradle Wrapper
+      - name: Grant execute permission for Gradle Wrapper
         run: chmod +x gradlew
 
-      - name: Rodar testes
+      - name: Run tests
         run: ./gradlew test
