@@ -19,8 +19,7 @@ jobs:
           PR_AUTHOR="${{ github.event.pull_request.user.login }}"
           
           # Formate a mensagem com informações do PR
-          Aqui está a tradução da mensagem para o inglês, mantendo a mesma estrutura e formatação:
-  
+          
           MESSAGE="New Pull Request #${PR_NUMBER} opened by ${PR_AUTHOR}:\n> **${PR_TITLE}**\n\n[View Pull Request](${PR_URL})"
 
           # Envie a mensagem para o Discord usando curl
