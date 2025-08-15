@@ -21,10 +21,8 @@ jobs:
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
   notify-discord-build-status:
-    # Este job só será executado se o job build-and-push-docker tiver terminado
     needs: build-and-push-docker
     runs-on: ubuntu-latest
-    # O 'always()' garante que este job será executado mesmo que o job anterior falhe.
     if: ${{ always() }}
     steps:
       - name: Send Build Status to Discord
@@ -36,22 +34,19 @@ jobs:
           WORKFLOW_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           
           MESSAGE=""
-          COLOR=0 # Default (gray/black for unknown status)
+          COLOR=0
           
           if [ "$BUILD_STATUS" == "success" ]; then
             MESSAGE="✅ Docker build and push succeeded on the `main` branch! [View Workflow](${WORKFLOW_URL})"
-            COLOR=3066993 # Green
+            COLOR=3066993
           elif [ "$BUILD_STATUS" == "failure" ]; then
             MESSAGE="❌ Docker build and push failed on the `main` branch! [View Workflow](${WORKFLOW_URL})"
-            COLOR=15158332 # Red
+            COLOR=15158332
           else
-            # Para casos como 'skipped' ou 'cancelled'
             MESSAGE="⚠️ Docker build and push status: ${BUILD_STATUS} on the `main` branch. [View Workflow](${WORKFLOW_URL})"
-            COLOR=16776960 # Yellow
+            COLOR=16776960
           fi
           
-          # Envie a mensagem formatada para o Discord usando um embed para melhor visualização
-          # O campo 'content' é para uma mensagem simples, 'embeds' para mensagens mais ricas.
           curl -H "Content-Type: application/json" \
           -d "{\"embeds\":[{\"description\":\"$MESSAGE\",\"color\":$COLOR}]}" \
           "${{ secrets.DISCORD_WEBHOOK }}"
