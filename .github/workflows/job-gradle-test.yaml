@@ -1,12 +1,17 @@
-name: Unit Tests Job
+name: Gradle Test Runner
 
 on:
   workflow_call:
+    inputs:
+      test_command:
+        required: true
+        type: string
 
 jobs:
-  unit-tests:
-    runs-on: ubuntu-latest
 
+  run-tests:
+    name: Run
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,5 +35,5 @@ jobs:
       - name: Grant execute permission for Gradle Wrapper
         run: chmod +x gradlew
 
-      - name: Run tests
-        run: ./gradlew test --no-daemon
+      - name: Run specified tests
+        run: ${{ inputs.test_command }}

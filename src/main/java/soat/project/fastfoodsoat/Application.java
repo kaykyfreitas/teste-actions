@@ -31,8 +31,7 @@ import org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServlet
 				GsonAutoConfiguration.class,
 				TaskExecutionAutoConfiguration.class,
 				TaskSchedulingAutoConfiguration.class,
-				BatchAutoConfiguration.class,
-				CacheAutoConfiguration.class
+				BatchAutoConfiguration.class
 		}
 )
 public class Application {

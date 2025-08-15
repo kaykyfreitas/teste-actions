@@ -1,0 +1,19 @@
+name: Tests Job
+
+on:
+  workflow_call:
+
+jobs:
+
+  unit-tests:
+    name: Unit
+    uses: ./.github/workflows/job-gradle-test.yaml
+    with:
+      test_command: ./gradlew test --no-daemon
+
+  integration-tests:
+    name: Integration
+    needs: unit-tests
+    uses: ./.github/workflows/job-gradle-test.yaml
+    with:
+      test_command: ./gradlew testIntegration --no-daemon

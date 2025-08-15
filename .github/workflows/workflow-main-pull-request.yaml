@@ -1,4 +1,4 @@
-name: Notify Pull Requests on Discord
+name: Pull Request Workflow
 
 on:
   pull_request:
@@ -8,9 +8,6 @@ on:
 
 jobs:
 
-  test-unit:
-    uses: ./.github/workflows/job-unit-test.yaml@main
-
-  test-integration:
-    needs: test-unit
-    uses: ./.github/workflows/job-integration-test.yaml@main
+  tests:
+    name: Tests
+    uses: ./.github/workflows/job-test.yaml
