@@ -1,10 +1,7 @@
-name: Run Tests
+name: Test Job
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_call: # Permite que outro workflow chame este
 
 jobs:
   test:
@@ -30,7 +27,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Dar permissão de execução ao Gradle Wrapper
+      - name: Dar permissão ao Gradle Wrapper
         run: chmod +x gradlew
 
       - name: Rodar testes
