@@ -14,14 +14,3 @@ jobs:
   test-integration:
     needs: test-unit
     uses: ./.github/workflows/job-integration-test.yaml@main
-
-  notify:
-    if: ${{ always() }}
-    uses: ./.github/workflows/job-discord-notify-pull-request.yaml@main
-    with:
-      pr_title: ${{ github.event.pull_request.title }}
-      pr_number: ${{ github.event.pull_request.number }}
-      pr_url: ${{ github.event.pull_request.html_url }}
-      pr_author: ${{ github.event.pull_request.user.login }}
-    secrets:
-      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
