@@ -7,7 +7,6 @@ Este projeto é uma API RESTful para um sistema de pedidos de fast food, desenvo
 A aplicação pode ser executada de diversas formas. Confira abaixo as opções disponíveis e a documentação detalhada para cada uma:
 
 - [📄 Deploy com Docker](./docs/docker.md)
-- [📄 Deploy com Kubernetes](./docs/kubernetes.md)
 
 ## 🧪 Testes
 
@@ -47,21 +46,3 @@ http://localhost:8080/api/swagger-ui/index.html
 
 - [🖼️ Visualizar Diagrama DDD (arquivo Draw.io)](./docs/diagrama-ddd.drawio)
 - [🔗 Acessar no Google Drive](https://drive.google.com/file/d/1jAH0o1r2prv5UD3AY6mZ57Uc93uPAPi9/view?usp=sharing)
-
-## ☁️ Arquitetura com Kubernetes
-
-![Arquitetura da Solução - Kubernetes](./docs/arquitetura-solucao.png)
-
-Essa imagem foi gerada utilizando o PlantUML. Você pode visualizar o código fonte do diagrama:
-- [📄 Arquivo PlantUML](./docs/arquitetura-solucao.puml)
-
-
-## 🧪 Teste Local
-
-Para gerar um token de autenticação, envie a seguinte identificação no endpoint `/auths`:
-
-```json
-{
-  "identification": "12345678901"
-}
-```
