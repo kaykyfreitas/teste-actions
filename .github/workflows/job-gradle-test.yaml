@@ -8,7 +8,9 @@ on:
         type: string
 
 jobs:
+
   run-tests:
+    name: Run
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
