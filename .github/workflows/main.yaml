@@ -9,3 +9,13 @@ on:
 jobs:
   run-tests:
     uses: ./.github/workflows/unit-test-job.yaml
+
+  build-and-push-docker:
+    needs: run-tests
+    uses: ./.github/workflows/docker-build-push-job.yaml
+    with:
+      image_name: soatproject/fastfood-soat-app-totem
+      image_tag: latest
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
