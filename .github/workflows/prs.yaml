@@ -1,4 +1,4 @@
-name: Notificar abertura de Pull Request no Discord
+name: Notify Pull Requests on Discord
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ jobs:
   notificar_discord_pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Enviar mensagem para o Discord
+      - name: Notify Discord
         run: |
           # Obtenha os detalhes do Pull Request
           PR_TITLE="${{ github.event.pull_request.title }}"
@@ -19,8 +19,10 @@ jobs:
           PR_AUTHOR="${{ github.event.pull_request.user.login }}"
           
           # Formate a mensagem com informações do PR
-          MENSAGEM="Novo Pull Request #${PR_NUMBER} aberto por ${PR_AUTHOR}:\n> **${PR_TITLE}**\n\n[Ver PR](${PR_URL})"
-          
+          Aqui está a tradução da mensagem para o inglês, mantendo a mesma estrutura e formatação:
+  
+          MESSAGE="New Pull Request #${PR_NUMBER} opened by ${PR_AUTHOR}:\n> **${PR_TITLE}**\n\n[View Pull Request](${PR_URL})"
+
           # Envie a mensagem para o Discord usando curl
           curl -H "Content-Type: application/json" \
           -d "{\"content\": \"$MENSAGEM\"}" \
