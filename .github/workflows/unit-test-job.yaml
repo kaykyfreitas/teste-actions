@@ -1,7 +1,7 @@
 name: Test Job
 
 on:
-  workflow_call: # Permite que outro workflow chame este
+  workflow_call:
 
 jobs:
   test:
